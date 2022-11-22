@@ -7,9 +7,13 @@
     "@openzeppelin/contracts": "^4.8.0",
     "@openzeppelin/test-helpers": "^0.5.16",
     "@truffle/hdwallet-provider": "^2.1.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "eth-gas-reporter": "^0.2.25"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "install": "^0.13.0",
+    "npm": "^9.1.2"
+  },
   "scripts": {
     "test": "truffle test"
   },

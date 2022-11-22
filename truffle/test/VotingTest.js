@@ -304,4 +304,11 @@ contract("Voting", function (accounts) {
         expectEvent(endVote, 'WorkflowStatusChange', {previousStatus: new BN(3),newStatus: new BN(4)});
     });
   })
+
+  // context("Contract total gas used", function() {
+  //   it('deployment simulation', async function(){
+  //     votingInstance = await Voting.new();
+  //     expectEvent(votingInstance, 'TOTAL GAZ COST:');
+  //  })
+  // })
 })

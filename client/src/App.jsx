@@ -1,23 +1,28 @@
 import { EthProvider } from "./contexts/EthContext";
-import Intro from "./components/Intro/";
-import Setup from "./components/Setup";
-import Demo from "./components/Demo";
+import Header from "./components/Header";
+import Status from "./components/Voting/Status";
+import Dashboard from "./components/Voting/Dashboard";
+import ProposalSection from "./components/Voting/ProposalSection";
 import Footer from "./components/Footer";
-import Voting from "./components/Voting";
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/fontawesome-svg-icons';
+// import { faEthereum, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import "./App.css";
+
+// library.add(fab, faCoffee, faEthereum);
 
 function App() {
   return (
     <EthProvider>
       <div id="App" >
         <div className="container">
-          <Intro />
+          <Header />
           <hr />
-          <Setup />
+          <Status />
           <hr />
-          <Demo />
+          <Dashboard />
           <hr />
-          <Voting />
+          <ProposalSection />
           <hr />
           <Footer />
         </div>

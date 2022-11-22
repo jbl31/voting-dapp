@@ -21,6 +21,8 @@
 require('dotenv').config();
 const mnemonic = process.env["MNEMONIC"];
 const infuraProjectId = process.env["INFURA_PROJECT_ID"];
+const quicknodeProjectId = process.env["QUICKNODE_PROJECT_ID"];
+const alchemyProjectId = process.env["ALCHEMY_PROJECT_ID"];
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -62,11 +64,14 @@ module.exports = {
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     goerli: {
-      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
+      // provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
+      // provider: () => new HDWalletProvider(mnemonic, "https://evocative-wispy-dinghy.ethereum-goerli.discover.quiknode.pro/ba6e535cff7f229256e9d7ac3a941ce352461d12"),
+      provider: () => new HDWalletProvider(mnemonic, `https://eth-goerli.g.alchemy.com/v2/${alchemyProjectId}`),
       from: "0x8B45fC2103af057AdFed456227c3c236fa7A3233", 
       network_id: 5,       // Goerli's network id
-      // chain_id: 5,         // Goerli's chain id
-      // gas: 5500000,        // Gas limit used for deploys.
+      // chain_id: 5,         // Goerli's chain id   
+      // gas: 5000000,// Gas limit used for deploys.
+      // gasPrice: 5e9,
       // confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       // skipDryRun: true
@@ -84,6 +89,8 @@ module.exports = {
   // Set default mocha options here, use special reporters, etc.
   mocha: {
     // timeout: 100000
+    reporter: 'eth-gas-reporter',
+    
   },
 
   // Configure your compilers
