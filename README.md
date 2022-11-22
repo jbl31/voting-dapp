@@ -1,3 +1,10 @@
+# Application de vote décentralisée
+
+Lien vers l'application déployée:
+https://voting-dapp-one.vercel.app/
+
+Lien vers la maquette Figma:
+https://www.figma.com/file/MWxmX8Y9VCF7QxO3O149UV/Vote-dApp?node-id=0%3A3&t=RZ6RoOe10crsD0Ms-1
 # React Truffle Box
 
 This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app. 
